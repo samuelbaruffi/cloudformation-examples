@@ -179,7 +179,7 @@
         "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
         "KeyName" : { "Ref" : "KeyName" },
         "Tags" : [
-            {"Key" : "Name", "Value" : "Instance 2"},
+            {"Key" : "Name", "Value" : "Instance 1"},
             {"Key" : "Owner", "Value" : "Samuel"}
         ], 
         "ImageId" : { "Fn::FindInMap" : [ "AWSRegionArch2AMI", { "Ref" : "AWS::Region" },
