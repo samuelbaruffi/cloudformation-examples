@@ -172,7 +172,9 @@ Resources:
         GroupDescription: Allow http to client host 
         VpcId: !Ref VPC
         SecurityGroupIngress:
-        - IpProtocol: -1
+        - IpProtocol: TCP
+          FromPort: 3306
+          ToPort: 3306
           SourceSecurityGroupId: !GetAtt WebServerSecurityGroup.GroupId
   
   DBSGBaseIngress:
