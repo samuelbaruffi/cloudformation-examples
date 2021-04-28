@@ -229,7 +229,7 @@ Resources:
             yum -y install mysql      
       Tags:
         - Key: Name
-          Value: CFN-Database1_Public
+          Value: CFN-WebServer1_Public
 
 Outputs:
   VPC:
