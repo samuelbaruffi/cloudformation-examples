@@ -197,13 +197,12 @@ Resources:
         'Fn::Base64': 
           !Sub |
             #!/bin/bash
-            yum -y update
 
-            # install nginx
-            amazon-linux-extras install nginx1 -y
+            # Update all packages
+            yum -y update
             
-            # start server
-            service nginx start  
+            # Install mysql client 
+            yum -y install mysql 
       Tags:
         - Key: Name
           Value: CFN-Database1_Private
@@ -221,12 +220,13 @@ Resources:
         'Fn::Base64': 
           !Sub |
             #!/bin/bash
-
-            # Update all packages
             yum -y update
+
+            # install nginx
+            amazon-linux-extras install nginx1 -y
             
-            # Install mysql client 
-            yum -y install mysql      
+            # start server
+            service nginx start       
       Tags:
         - Key: Name
           Value: CFN-WebServer1_Public
